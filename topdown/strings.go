@@ -6,6 +6,7 @@ package topdown
 
 import (
 	"fmt"
+	"math/big"
 	"sort"
 	"strings"
 
@@ -366,7 +367,9 @@ func builtinSprintf(a, b ast.Value) (ast.Value, error) {
 		case ast.Number:
 			if n, ok := v.Int(); ok {
 				args[i] = n
-			} else if f, ok := v.Float64(); ok {
+			} else if b, ok := new(big.Int).SetString(v.String(), 10); ok {
+				args[i] = b
+			}else if f, ok := v.Float64(); ok {
 				args[i] = f
 			} else {
 				args[i] = v.String()

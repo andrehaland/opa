@@ -97,11 +97,11 @@ func Compare(a, b interface{}) int {
 			}
 		}
 
-		bigA, ok := new(big.Float).SetString(string(a))
+		bigA, ok := new(big.Float).SetPrec(big.MaxPrec).SetString(string(a))
 		if !ok {
 			panic("illegal value")
 		}
-		bigB, ok := new(big.Float).SetString(string(b.(Number)))
+		bigB, ok := new(big.Float).SetPrec(big.MaxPrec).SetString(string(b.(Number)))
 		if !ok {
 			panic("illegal value")
 		}
