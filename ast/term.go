@@ -1518,14 +1518,14 @@ func (s *set) insert(x *Term) {
 			break
 		}
 
-		a, ok := new(big.Float).SetString(string(x))
+		a, ok := new(big.Float).SetPrec(1e5).SetString(string(x))
 		if !ok {
 			panic("illegal value")
 		}
 
 		equal = func(b Value) bool {
 			if b, ok := b.(Number); ok {
-				b, ok := new(big.Float).SetString(string(b))
+				b, ok := new(big.Float).SetPrec(1e5).SetString(string(b))
 				if !ok {
 					panic("illegal value")
 				}
@@ -1579,14 +1579,14 @@ func (s *set) get(x *Term) *Term {
 			break
 		}
 
-		a, ok := new(big.Float).SetString(string(x))
+		a, ok := new(big.Float).SetPrec(1e5).SetString(string(x))
 		if !ok {
 			panic("illegal value")
 		}
 
 		equal = func(b Value) bool {
 			if b, ok := b.(Number); ok {
-				b, ok := new(big.Float).SetString(string(b))
+				b, ok := new(big.Float).SetPrec(1e5).SetString(string(b))
 				if !ok {
 					panic("illegal value")
 				}
@@ -1983,14 +1983,14 @@ func (obj *object) get(k *Term) *objectElem {
 			break
 		}
 
-		a, ok := new(big.Float).SetString(string(x))
+		a, ok := new(big.Float).SetPrec(1e5).SetString(string(x))
 		if !ok {
 			panic("illegal value")
 		}
 
 		equal = func(b Value) bool {
 			if b, ok := b.(Number); ok {
-				b, ok := new(big.Float).SetString(string(b))
+				b, ok := new(big.Float).SetPrec(1e5).SetString(string(b))
 				if !ok {
 					panic("illegal value")
 				}
@@ -2038,14 +2038,14 @@ func (obj *object) insert(k, v *Term) {
 			break
 		}
 
-		a, ok := new(big.Float).SetString(string(x))
+		a, ok := new(big.Float).SetPrec(1e5).SetString(string(x))
 		if !ok {
 			panic("illegal value")
 		}
 
 		equal = func(b Value) bool {
 			if b, ok := b.(Number); ok {
-				b, ok := new(big.Float).SetString(string(b))
+				b, ok := new(big.Float).SetPrec(1e5).SetString(string(b))
 				if !ok {
 					panic("illegal value")
 				}
